@@ -6,7 +6,7 @@
 /*   By: basylbek <basylbek@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 15:37:04 by basylbek          #+#    #+#             */
-/*   Updated: 2019/10/23 14:45:36 by basylbek         ###   ########.fr       */
+/*   Updated: 2019/12/26 18:24:28 by basylbek         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,7 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*ptr;
-	size_t	i;
-
-	i = 0;
-	if (size < 1)
+	if (size + 1 == 0)
 		return (NULL);
-	ptr = (char*)malloc(size + 1);
-	if (!ptr)
-		return (NULL);
-	while (i < size + 1)
-		ptr[i++] = '\0';
-	return (ptr);
+	return ((char*)ft_memalloc(size + 1));
 }
